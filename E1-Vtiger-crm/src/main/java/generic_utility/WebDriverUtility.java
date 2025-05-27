@@ -21,9 +21,12 @@ public class WebDriverUtility {
 		   this.act = new Actions(driver);
 //		   this.sel = new Select(dropdown);
 	   }
+
+	   
+//  closing browser
 	   
 	  public void closingBrowser() {
-		  driver.close();
+//		  driver.close();
 		  driver.quit();
 	  }
 	  
