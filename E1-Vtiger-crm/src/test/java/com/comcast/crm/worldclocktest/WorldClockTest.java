@@ -3,6 +3,7 @@ package com.comcast.crm.worldclocktest;
 import java.io.IOException;
 import java.nio.channels.SelectableChannel;
 import java.sql.Driver;
+import java.time.Clock;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -13,13 +14,18 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.ClockTime;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class WorldClockTest {
+	@Test
+	public void WorldClock() throws IOException {
 
-	public static void main(String[] args) throws IOException {
 		
 // featch the datd from property file
 		
@@ -58,30 +64,34 @@ public class WorldClockTest {
 		
 // login into vtiger-crm
     driver.get(URL);
-   driver.findElement(By.name("user_name")).sendKeys("admin");
-   driver.findElement(By.name("user_password")).sendKeys("admin");
-   driver.findElement(By.cssSelector("input[type='submit']")).submit();
+    LoginPage lp = new LoginPage(driver);
+	lp.getUsername().sendKeys("admin");
+	lp.getPassword().sendKeys("admin");
+	lp.getLoginbutton().click();
    
  // click on clock
    
-   driver.findElement(By.cssSelector("img[title=\"Show World Clock...\"]")).click();
-  WebElement country  = driver.findElement(By.id("clockcity"));
-  
-  wdutil.selectByVisibleText(country,"Bulgaria");
-
-  
- WebElement worldclock = driver.findElement(By.xpath("//b[text()='World Clock']"));
- WebElement orders =  driver.findElement(By.id("headerrow_12"));
-  
-  
-  wdutil.dragAndDrop(worldclock, orders);                               // dragAndDrop method use 
+//	ClockTime ct =new  ClockTime(driver);
+//   
+//   ct.getClickOnWorldClock().click();
+//   WebElement country =ct.getCountry();
+//  
+//  wdutil.selectByVisibleText(country,"Bulgaria");
+//
+//  
+// WebDriver worldclock = ct.getInspectWorldClock();
+// WebElement orders = ct.getOrders();
+//  
+//  
+//  wdutil.dragAndDrop(worldclock, orders);                               // dragAndDrop method use 
   
   
  // log out 
   
-  WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-  wdutil.hover(profile);
-  driver.findElement(By.linkText("Sign Out")).click();
+    SignOut so = new SignOut(driver);
+    WebElement hoverOnProfile =	so.getProfile();
+    wdutil.hover(hoverOnProfile);
+    so.getSignout().click();
   
 // close browser 
   wdutil.closingBrowser();

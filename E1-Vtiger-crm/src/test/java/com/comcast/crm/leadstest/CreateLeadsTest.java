@@ -13,12 +13,18 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.Leads;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class CreateLeadsTest {
-public static void main(String[] args) throws InterruptedException, IOException {
+	@Test
+	public void CreateLeads() throws IOException, InterruptedException {
+//public static void main(String[] args) throws InterruptedException, IOException {
 	
 // get data from property file
 	
@@ -63,35 +69,29 @@ public static void main(String[] args) throws InterruptedException, IOException 
 	
 	    
 		driver.get(URL);
-		 WebElement uname = driver.findElement(By.name("user_name"));
-		uname.sendKeys("admin");
-		
-		WebElement password = driver.findElement(By.name("user_password"));
-		password.sendKeys("admin");
-		
-	WebElement loginbtn =	driver.findElement(By.cssSelector("input[type='submit']"));
-	loginbtn.submit();
+		LoginPage lp = new LoginPage(driver);
+		lp.getUsername().sendKeys("admin");
+		lp.getPassword().sendKeys("admin");
+		lp.getLoginbutton().click();
 	
 
 // create leads
 	
-	driver.findElement(By.linkText("Leads")).click();
-	WebElement plusbtn = driver.findElement(By.cssSelector("img[src='themes/softed/images/btnL3Add.gif']"));
-	plusbtn.click();
+		Leads le = new Leads(driver);
+	    le.getClickOnLeads().click();
 	
-	 WebElement leadNameField = driver.findElement(By.name("lastname"));
-	String lastName = "pankesh"+ (int) (Math.random() * 9999);
-	 leadNameField.sendKeys("lastName");
+	   le.getClickOnPlusBtn().click();
+	
+	  le.getLeadFieldName().sendKeys("lastName");
+	  String lastName = "pankesh"+ (int) (Math.random() * 9999);
+	
 	 
-	 WebElement companyName = driver.findElement(By.name("company"));
-	 companyName.sendKeys("QA_Automation");
-	 
-	 WebElement saveBtn = driver.findElement(By.cssSelector("input[title=\"Save [Alt+S]\"]"));
-	 saveBtn.click();
+	 le.getCompanyName().sendKeys("QA_Automation");
+	 le.getClickOnSaveBtn().click();
 	 
 //   verification of leads
 	 
-	 WebElement header = driver.findElement(By.className("dvHeaderText"));
+	 WebElement header = le.getHeader();
 	   String actualleadName  =header.getText();
 	   
 	   if(actualleadName.equals(lastName)) {
@@ -101,12 +101,10 @@ public static void main(String[] args) throws InterruptedException, IOException 
 	   
 // logout
 	  
-	  WebElement profile = driver.findElement(By.cssSelector("img[src=\"themes/softed/images/user.PNG\"]"));
+	   SignOut so = new SignOut(driver);
+	    WebElement hoverOnProfile =	so.getProfile();
 	  
-	  
-	  wdUtil.hover(profile);
-	  
-	  driver.findElement(By.linkText("Sign Out")).click();
+	  	  wdUtil.hover(hoverOnProfile);
 	  
 // close the browser
 	  

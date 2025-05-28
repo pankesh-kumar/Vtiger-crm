@@ -15,14 +15,20 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.AddMore;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class AddMoreTest {
+	@Test
+	
+	public void AddMore() throws IOException {
 
-	public static void main(String[] args) throws IOException {
-		
 // get data from property file
 		
 				FileUtility fUtil = new FileUtility();
@@ -64,33 +70,33 @@ public class AddMoreTest {
 // login into vtiger-crm
 	
 	driver.get(URL);
-	driver.findElement(By.name("user_name")).sendKeys("admin");
-	driver.findElement(By.name("user_password")).sendKeys("admin");
-	driver.findElement(By.cssSelector("input[type='submit']")).submit();
+	LoginPage lp = new LoginPage(driver);
+	lp.getUsername().sendKeys("admin");
+	lp.getPassword().sendKeys("admin");
+	lp.getLoginbutton().click();
 	
 	
 // click on more module
+	AddMore am = new AddMore(driver);
 	
-	WebElement more = driver.findElement(By.linkText("More"));
-	
-	
+	WebElement more =am.getHoverOnMore();
 	wdUtil.hover(more);
 	
 // click on invoice element
 	
-	driver.findElement(By.linkText("Invoice")).click();
+	am.getClickOnInvoice().click();
 	
 // click on plus button to  add invoice
 	
-	driver.findElement(By.cssSelector("img[src='themes/softed/images/btnL3Add.gif']")).click();
+	am.getClickOnPlusBtn().click();
 	
-    driver.findElement(By.name("subject")).sendKeys("cancle invoice");
-    driver.findElement(By.cssSelector("textarea[name=\"bill_street\"]")).sendKeys("noida,sector-16,qspider"); // billing address 
-    driver.findElement(By.cssSelector("textarea[name=\"ship_street\"]")).sendKeys("new delhi, vivek vihar");  // shipping address 
+    am.getPassSubject().sendKeys("cancle invoice");
+    am.getBillingAdd().sendKeys("andheri,mumbai");              // billing address 
+    am.getShpingAdd().sendKeys("noida,sector-16,qspider");      // shipping address 
     
  // for orgination name , use window handles
     
-    driver.findElement(By.cssSelector("img[src=\"themes/softed/images/select.gif\"]")).click();
+    am.getClickOnImg().click();
     String parentid = driver.getWindowHandle();
     Set<String> ids = driver.getWindowHandles();
  
@@ -99,15 +105,16 @@ public class AddMoreTest {
     	driver.switchTo().window(id);
     }
     
-    driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("so5");
-    driver.findElement(By.name("search")).click();
-    driver.findElement(By.linkText("SO_vendtl")).click();
+    am.getPassText().sendKeys("so5");
+    am.getClickOnSearch().click();
+    am.getClickOnSovent().click();
     driver.switchTo().window(parentid);
     
  // log out
-    WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-	 wdUtil.hover(profile);
-	  driver.findElement(By.linkText("Sign Out")).click();
+      SignOut so = new SignOut(driver);
+      WebElement hoverOnProfile = so.getProfile();
+	  wdUtil.hover(hoverOnProfile);
+	  so.getSignout().click();
 	  
 // close window
 	  

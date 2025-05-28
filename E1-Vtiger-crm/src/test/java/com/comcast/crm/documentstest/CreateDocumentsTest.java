@@ -13,13 +13,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.Documents;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class CreateDocumentsTest {
+	@Test
+	
+	public void CreateDocuments() throws IOException {
 
-	public static void main(String[] args) throws IOException {
 		
 // get the data from property file
 		
@@ -60,16 +66,17 @@ public class CreateDocumentsTest {
 		
 // login into vtiger crm
 		driver.get(URL);
-		driver.findElement(By.name("user_name")).sendKeys("admin");    
-		driver.findElement(By.name("user_password")).sendKeys("admin");
-		
-		driver.findElement(By.cssSelector("input[type='submit']")).submit();
+		LoginPage lp = new LoginPage(driver);
+		lp.getUsername().sendKeys("admin");
+		lp.getPassword().sendKeys("admin");
+		lp.getLoginbutton().click();
 		
 // Create Documents
+		Documents dc = new Documents(driver);
 		
-		driver.findElement(By.linkText("Documents")).click();
-		driver.findElement(By.xpath("//img[@src='themes/softed/images/btnL3Add.gif']")).click();
-		driver.findElement(By.xpath("//input[@name='notes_title']")).sendKeys("operation-sindoor");
+		dc.getClickOnDocuments().click();
+		dc.getClickOnPlus().click();
+		dc.getTitleField().sendKeys("operation-sindoor");
 		
 		Actions act = new Actions(driver);
 		act.keyDown(Keys.TAB).build().perform();
@@ -91,14 +98,15 @@ public class CreateDocumentsTest {
 		act.sendKeys("Operation Sindoor highlights: 12 civilians and one soldier killed in Pak shelling in J&K’s Poonch;"
 				+ " Govt calls all-party meet on May 8").build().perform();
 		
-		driver.findElement(By.cssSelector("input[type='submit']")).click();
+		dc.getClickOnSubmitBtn().click();
 		
 // log out
 		
-		WebElement profile = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
-		wdutil.hover(profile);
+		 SignOut so = new SignOut(driver);
+		 WebElement hoverOnProfile = so.getProfile();
+		 wdutil.hover(hoverOnProfile);
 		
-		driver.findElement(By.linkText("Sign Out")).click();
+		 so.getSignout().click();
 		
 		
 // close the browser		

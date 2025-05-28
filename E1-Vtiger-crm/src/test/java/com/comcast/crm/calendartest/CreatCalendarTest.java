@@ -14,13 +14,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.Calendar;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class CreatCalendarTest {
+	@Test
+	
+	public void CreateCalendar() throws IOException {
 
-	public static void main(String[] args) throws InterruptedException, IOException {
 		
 // get data from property file
 		
@@ -68,74 +74,71 @@ public class CreatCalendarTest {
 		
 		 driver.get(URL);
 		 
-		 WebElement userName= driver.findElement(By.name("user_name"));
-		 userName.sendKeys("admin");
+		 LoginPage lp = new LoginPage(driver);
 		 
-		 WebElement userPassword = driver.findElement(By.name("user_password"));
-		 userPassword.sendKeys("admin");
+		  WebElement username = lp.getUsername();
+		  username.sendKeys("admin");
+		  
+		   WebElement password = lp.getPassword();
+		   password.sendKeys("admin");
+		   
+		   WebElement loginbutton = lp.getLoginbutton();
+		   loginbutton.click();
 		 
-		 WebElement loginBtn= driver.findElement(By.id("submitButton"));
-		 loginBtn.click();
-		 
-		 
+				 
 // create calendar
+		   
+		   Calendar cl = new Calendar(driver);
+		   
+		   WebElement clickOnCalendar = cl.getClickOnCalendar();
+		   clickOnCalendar.click();
 		 
-		 WebElement clickOnCalendar = driver.findElement(By.linkText("Calendar"));
-		 clickOnCalendar.click();
-		 
-		 WebElement selectDay = driver.findElement(By.linkText("Day"));
+		 WebElement selectDay = cl.getSelectDay();
 		 selectDay.click();
-
-// hover on add button
-		  WebElement addBtn= driver.findElement(By.className("calAddButton"));
 		 
-		wdutil.hover(addBtn);
+// hover on add button
+		 
+		 WebElement hoverOnAddBtn = cl.getHoverOnAddBtn();		 
+		 wdutil.hover(hoverOnAddBtn);
 		 
 // click on ToDo button
 		 
-		 WebElement clickOnTodoBtn  = driver.findElement(By.linkText("To Do"));
-		 clickOnTodoBtn.click();
-		 
+		  WebElement clickOnToDoBtn = cl.getClickOnToDoBtn();
+		  clickOnToDoBtn.click();
+				 
 // create To Do		 
-		 
-		 WebElement todoField = driver.findElement(By.name("task_subject"));
-		 
+		 WebElement toDoFiled = cl.getToDoField();
+		 		 
 // generate random number
 		 
 		 String todoName = "DailyRoutine" +(int) (Math.random()*9999);
-         todoField.sendKeys(calendar);
+		 toDoFiled.sendKeys(calendar);
          
 // select date, time & save To Do
-        
-         WebElement selectCalendar = driver.findElement(By.id("jscal_trigger_task_date_start"));
-         selectCalendar.click();
-         
-         WebElement setDate= driver.findElement(By.xpath("//td[text()='9']"));
-         setDate.click();
-         
-         WebElement toDoSave = driver.findElement(By.name("todosave"));
-         toDoSave.click();
-         
+       WebElement selectCalendar =  cl.getSelectCalendar();
+       selectCalendar.click();
+         WebElement selectDate = cl.getSelectDate();
+         selectDate.click();
+          WebElement saveToDo = cl.getSaveToDo();
+          saveToDo.click();
+                 
  // verification of To Do
-         driver.findElement(By.linkText("All Events & Todos")).click();
-         driver.findElement(By.linkText("DailyRoutine")).click();
+           WebElement clickOnAllEvents = cl.getClickOnAllEventsAndToDo();
+           clickOnAllEvents.click();
+         WebElement clickOnDailyRoutine = cl.getClickOnDailyRoutine();
+         clickOnDailyRoutine.click();
+         WebElement inspectHeader = cl.getInspectHeader();         
          
-         WebElement header = driver.findElement(By.className("lvtHeaderText"));
-         
-        String actualToDOName =  header.getText();
+        String actualToDOName = inspectHeader.getText();
         System.out.println(actualToDOName);
-        
-      //  if(actualToDOName.equals(todoName)) {
-      //  	System.out.println("successfuly created!!!!!");
-        
+            
         	
 // logout
-        	
-        	WebElement profile = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
-        	
+        	SignOut so = new SignOut(driver);
+        	WebElement profile = so.getProfile();      	
         	wdutil.hover(profile);
-        	driver.findElement(By.linkText("Sign Out")).click();
-        	
+        	WebElement signout = so.getSignout();
+        	signout.click();
         	
 // close the browser
         	

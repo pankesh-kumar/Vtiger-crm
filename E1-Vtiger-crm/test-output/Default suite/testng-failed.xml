@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.comcast.crm.contacttest.CreateContactTest">
+      <class name="com.comcast.crm.worldclocktest.WorldClockTest">
         <methods>
-          <include name="contact"/>
+          <include name="WorldClock"/>
         </methods>
-      </class> <!-- com.comcast.crm.contacttest.CreateContactTest -->
+      </class> <!-- com.comcast.crm.worldclocktest.WorldClockTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

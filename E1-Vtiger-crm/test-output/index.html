@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -50,12 +50,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\panke\git\vtiger-crm\E1-Vtiger-crm\parallel.xml</span>
+                    <span>C:\Users\panke\git\vtiger-crm\E1-Vtiger-crm\batch-vtiger.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">3 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
+                    <span class="method-stats">11 methods, 2 failed,   9 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,12 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="extra.Demo2" class="method navigator-link" hash-for-method="mul">mul</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.emailtest.ComposeEmailTest" class="method navigator-link" hash-for-method="ComposeEmail">ComposeEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.dashboardtest.ShowDashBoardTest" class="method navigator-link" hash-for-method="ShowDashBoard">ShowDashBoard</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -117,12 +122,47 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="extra.Demo1" class="method navigator-link" hash-for-method="add">add</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.moretest.AddMoreTest" class="method navigator-link" hash-for-method="AddMore">AddMore</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="extra.Demo3" class="method navigator-link" hash-for-method="sub">sub</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.calendartest.CreatCalendarTest" class="method navigator-link" hash-for-method="CreateCalendar">CreateCalendar</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.documentstest.CreateDocumentsTest" class="method navigator-link" hash-for-method="CreateDocuments">CreateDocuments</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.leadstest.CreateLeadsTest" class="method navigator-link" hash-for-method="CreateLeads">CreateLeads</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.opportunitiestest.CreateOpportunitiesTest" class="method navigator-link" hash-for-method="CreateOpportunities">CreateOpportunities</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.orgtest.CreateOrgTest" class="method navigator-link" hash-for-method="CreateOrganization">CreateOrganization</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.productstest.CreateProductsTest" class="method navigator-link" hash-for-method="CreateProducts">CreateProducts</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.moretest.DeleteMoreTest" class="method navigator-link" hash-for-method="DeleteMore">DeleteMore</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest" class="method navigator-link" hash-for-method="TroubleTickets">TroubleTickets</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -140,24 +180,78 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">extra.Demo2</span>
+              <span class="class-name">com.comcast.crm.emailtest.ComposeEmailTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="mul">
-                  </a> <!-- mul -->
-                  <span class="method-name">mul</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.time.Duration.getSeconds()&quot; because &quot;duration&quot; is null
-	at java.base/java.util.concurrent.TimeUnit.convert(TimeUnit.java:218)
-	at java.base/java.lang.Thread.sleep(Thread.java:584)
-	at extra.Demo2.mul(Demo2.java:14)
+                  <a name="ComposeEmail">
+                  </a> <!-- ComposeEmail -->
+                  <span class="method-name">ComposeEmail</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;img[src=&quot;themes/softed/images/select.gif&quot;]&quot;}
+  (Session info: chrome=137.0.7151.41)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d1fecafc2e873c6227e858fadd35990a, findElement {using=css selector, value=img[src=&quot;themes/softed/images/select.gif&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.41, chrome: {chromedriverVersion: 137.0.7151.55 (254bc711794d..., userDataDir: C:\Users\panke\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55647}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55647/devtoo..., se:cdpVersion: 137.0.7151.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d1fecafc2e873c6227e858fadd35990a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at com.comcast.crm.emailtest.ComposeEmailTest.ComposeEmail(ComposeEmailTest.java:101)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 15 stack frames
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.comcast.crm.dashboardtest.ShowDashBoardTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="ShowDashBoard">
+                  </a> <!-- ShowDashBoard -->
+                  <span class="method-name">ShowDashBoard</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=137.0.7151.41)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c15d782dac60a060b8d1578467a079c5, clickElement {id=f.E008412E05BBCA0B8420E7C952902008.d.1BFE49DA178359637D539F5B8A3C63ED.e.326}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.41, chrome: {chromedriverVersion: 137.0.7151.55 (254bc711794d..., userDataDir: C:\Users\panke\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55680}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55680/devtoo..., se:cdpVersion: 137.0.7151.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c15d782dac60a060b8d1578467a079c5)] -&gt; css selector: area[shape=&apos;polygon&apos;]]
+Session ID: c15d782dac60a060b8d1578467a079c5
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.comcast.crm.dashboardtest.ShowDashBoardTest.ShowDashBoard(ShowDashBoardTest.java:104)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -166,14 +260,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">extra.Demo3</span>
+              <span class="class-name">com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="sub">
-                  </a> <!-- sub -->
-                  <span class="method-name">sub</span>
+                  <a name="TroubleTickets">
+                  </a> <!-- TroubleTickets -->
+                  <span class="method-name">TroubleTickets</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -181,14 +275,119 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">extra.Demo1</span>
+              <span class="class-name">com.comcast.crm.opportunitiestest.CreateOpportunitiesTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="add">
-                  </a> <!-- add -->
-                  <span class="method-name">add</span>
+                  <a name="CreateOpportunities">
+                  </a> <!-- CreateOpportunities -->
+                  <span class="method-name">CreateOpportunities</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.orgtest.CreateOrgTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateOrganization">
+                  </a> <!-- CreateOrganization -->
+                  <span class="method-name">CreateOrganization</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.productstest.CreateProductsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateProducts">
+                  </a> <!-- CreateProducts -->
+                  <span class="method-name">CreateProducts</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.moretest.AddMoreTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddMore">
+                  </a> <!-- AddMore -->
+                  <span class="method-name">AddMore</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.moretest.DeleteMoreTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="DeleteMore">
+                  </a> <!-- DeleteMore -->
+                  <span class="method-name">DeleteMore</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.documentstest.CreateDocumentsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateDocuments">
+                  </a> <!-- CreateDocuments -->
+                  <span class="method-name">CreateDocuments</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.calendartest.CreatCalendarTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateCalendar">
+                  </a> <!-- CreateCalendar -->
+                  <span class="method-name">CreateCalendar</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.comcast.crm.leadstest.CreateLeadsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="CreateLeads">
+                  </a> <!-- CreateLeads -->
+                  <span class="method-name">CreateLeads</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -196,28 +395,28 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\panke\git\vtiger-crm\E1-Vtiger-crm\parallel.xml</span>
+            <span class="header-content">C:\Users\panke\git\vtiger-crm\E1-Vtiger-crm\batch-vtiger.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Test 1&quot;&gt;
+&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;extra.Demo1&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.moretest.AddMoreTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.moretest.DeleteMoreTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.opportunitiestest.CreateOpportunitiesTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.productstest.CreateProductsTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.calendartest.CreatCalendarTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.leadstest.CreateLeadsTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.emailtest.ComposeEmailTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.dashboardtest.ShowDashBoardTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.documentstest.CreateDocumentsTest&quot;/&gt;
+      &lt;class name=&quot;com.comcast.crm.orgtest.CreateOrgTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test 1 --&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Test 2&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;extra.Demo2&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test 2 --&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Test 3&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;extra.Demo3&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test 3 --&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -229,13 +428,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test 1 (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Test 2 (1 class)</span>
-              </li>
-              <li>
-                <span class="test-name">Test 3 (1 class)</span>
+                <span class="test-name">Test (11 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -261,24 +454,56 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(11);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'sub')
-data.setCell(0, 2, 'extra.Demo3')
-data.setCell(0, 3, 9745);
+data.setCell(0, 1, 'CreateOrganization')
+data.setCell(0, 2, 'com.comcast.crm.orgtest.CreateOrgTest')
+data.setCell(0, 3, 28601);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'add')
-data.setCell(1, 2, 'extra.Demo1')
-data.setCell(1, 3, 8839);
+data.setCell(1, 1, 'CreateCalendar')
+data.setCell(1, 2, 'com.comcast.crm.calendartest.CreatCalendarTest')
+data.setCell(1, 3, 25784);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'mul')
-data.setCell(2, 2, 'extra.Demo2')
-data.setCell(2, 3, 6359);
+data.setCell(2, 1, 'ComposeEmail')
+data.setCell(2, 2, 'com.comcast.crm.emailtest.ComposeEmailTest')
+data.setCell(2, 3, 24160);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TroubleTickets')
+data.setCell(3, 2, 'com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest')
+data.setCell(3, 3, 23500);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'CreateLeads')
+data.setCell(4, 2, 'com.comcast.crm.leadstest.CreateLeadsTest')
+data.setCell(4, 3, 19098);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'CreateDocuments')
+data.setCell(5, 2, 'com.comcast.crm.documentstest.CreateDocumentsTest')
+data.setCell(5, 3, 18797);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'CreateProducts')
+data.setCell(6, 2, 'com.comcast.crm.productstest.CreateProductsTest')
+data.setCell(6, 3, 18126);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'CreateOpportunities')
+data.setCell(7, 2, 'com.comcast.crm.opportunitiestest.CreateOpportunitiesTest')
+data.setCell(7, 3, 17528);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'AddMore')
+data.setCell(8, 2, 'com.comcast.crm.moretest.AddMoreTest')
+data.setCell(8, 3, 16643);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'ShowDashBoard')
+data.setCell(9, 2, 'com.comcast.crm.dashboardtest.ShowDashBoardTest')
+data.setCell(9, 3, 13007);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'DeleteMore')
+data.setCell(10, 2, 'com.comcast.crm.moretest.DeleteMoreTest')
+data.setCell(10, 3, 10521);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -289,18 +514,6 @@ return data;
             <span class="header-content">Reporter output for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">add</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">hi john</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">sub</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">hy ram</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
@@ -316,26 +529,84 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">extra.Demo1</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.comcast.crm.moretest.AddMoreTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">add</span>
+                <span class="method-name">AddMore</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">extra.Demo2</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.comcast.crm.moretest.DeleteMoreTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">DeleteMore</span>
+                <span class="method-start">16653 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">TroubleTickets</span>
+                <span class="method-start">27174 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.opportunitiestest.CreateOpportunitiesTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CreateOpportunities</span>
+                <span class="method-start">50678 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.productstest.CreateProductsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CreateProducts</span>
+                <span class="method-start">68210 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.calendartest.CreatCalendarTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CreateCalendar</span>
+                <span class="method-start">86336 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.leadstest.CreateLeadsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CreateLeads</span>
+                <span class="method-start">112124 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.emailtest.ComposeEmailTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">mul</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-name">ComposeEmail</span>
+                <span class="method-start">131222 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">extra.Demo3</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.comcast.crm.dashboardtest.ShowDashBoardTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">sub</span>
-                <span class="method-start">0 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">ShowDashBoard</span>
+                <span class="method-start">155382 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.documentstest.CreateDocumentsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CreateDocuments</span>
+                <span class="method-start">168391 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.comcast.crm.orgtest.CreateOrgTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">CreateOrganization</span>
+                <span class="method-start">187188 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -6,6 +6,7 @@ import java.net.http.WebSocket;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.commons.math3.stat.descriptive.summary.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,14 +14,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.LoginPage;
+import object_reprository.Products;
+import object_reprository.SignOut;
 
 public class CreateProductsTest {
+	@Test
+	
+	public void CreateProducts() throws IOException {
 
-	public static void main(String[] args) throws IOException {
-		
 		
 // get data from property file
 		
@@ -66,30 +72,33 @@ public class CreateProductsTest {
 // login into vtiger crm
 	
 	driver.get(URL);                                                       // pass vtiger url
-	driver.findElement(By.name("user_name")).sendKeys("admin");            // pass username of vtiger
-	driver.findElement(By.name("user_password")).sendKeys("admin");        // pass password of vtiger
-	driver.findElement(By.cssSelector("input[type='submit']")).submit();   // click on login button
+	
+	LoginPage lp = new LoginPage(driver);
+	lp.getUsername().sendKeys("admin");                        // pass username of vtiger
+	lp.getPassword().sendKeys("admin");                        // pass password of vtiger
+	lp.getLoginbutton().submit();                               // click on login button
 	
 	
 // Create Products	
 	
-	driver.findElement(By.linkText("Products")).click();                                        // click on product module
+	Products p = new Products(driver);
+	p.getClickOnProduct().click();                                   // click on product module
 	
-	driver.findElement(By.cssSelector("img[src='themes/softed/images/btnL3Add.gif']")).click(); // click on plus icon and add products
+	p.getClickOnPlus().click();                                      // click on plus icon and add products
 	
-	driver.findElement(By.name("productname")).sendKeys("s-400-missile");                      // pass product name 
+	p.getPassProductName().sendKeys("juci mango");                   // pass product name 
 	
-	driver.findElement(By.cssSelector("input[title='Save [Alt+S]'")).click();                  // click on save button 
+	p.getClickOnSaveBtn().click();                                   // click on save button 
 	
 
 // log out
+	SignOut so = new SignOut(driver);
 	
-	 WebElement profile = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']")); // hover on profile
+	 WebElement hoverOnProfile = so.getProfile();       // hover on profile
+	                    
+	 wdUtil.hover(hoverOnProfile);                       // to scroll target element
 	 
-	                       
-	 wdUtil.hover(profile);                                      // to scroll target element
-	 
-	 driver.findElement(By.linkText("Sign Out")).click();       // inspect logout by using freeze method, f8 button use to freez.
+	 so.getSignout().click();                           // inspect logout by using freeze method, f8 button use to freez.
 	 
 // close browser
 	 

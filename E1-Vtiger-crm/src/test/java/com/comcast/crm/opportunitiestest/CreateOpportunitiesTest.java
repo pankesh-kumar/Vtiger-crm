@@ -17,12 +17,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.LoginPage;
+import object_reprository.Opportunities;
+import object_reprository.SignOut;
 
 public class CreateOpportunitiesTest {
-public static void main(String[] args) throws InterruptedException, IOException {
+	@Test
+	
+	public void CreateOpportunities() throws IOException {
+
 	
 // get data from property file
 	
@@ -67,34 +74,24 @@ public static void main(String[] args) throws InterruptedException, IOException 
 // login into vtiger crm
 	
 	driver.get(URL);
-	WebElement userName = driver.findElement(By.name("user_name"));
-	userName.sendKeys("admin");
-	
-	WebElement password = driver.findElement(By.name("user_password"));
-	password.sendKeys("admin");
-	
-	WebElement loginBtn = driver.findElement(By.id("submitButton"));
-	loginBtn.submit();
+	LoginPage lp = new LoginPage(driver);
+	lp.getUsername().sendKeys("admin");
+	lp.getPassword().sendKeys("admin");
+	lp.getLoginbutton().click();
 	
 // create opportunities 
 	
-	 WebElement clickOnOpportunities = driver.findElement(By.linkText("Opportunities"));
-	 clickOnOpportunities.click();
+	Opportunities opp = new Opportunities(driver);
+	 opp.getClickOnOpportunity().click();
 	 
-	  WebElement createOpportunities = driver.findElement(By.cssSelector("img[src='themes/softed/images/btnL3Add.gif']"));
-	  createOpportunities.click();
-	  
-	  
+	  opp.getCreateOpportunity().click();
 	  
 // generate random number 
 	  
 	  String opportunityInfo = "cucumber"+ (int) (Math.random()*9999);
+	  opp.getOpportunityName().sendKeys("opportunityInfo");
+	  opp.getClickOnRelatedTo().click();
 	  
-	  WebElement opportunityName = driver.findElement(By.name("potentialname"));
-	  opportunityName.sendKeys(opportunityInfo);
-	  
-	  WebElement relatedTo = driver.findElement(By.cssSelector("img[src='themes/softed/images/select.gif']"));
-	  relatedTo.click();
 	  
 // use window handles
 	  
@@ -111,30 +108,27 @@ public static void main(String[] args) throws InterruptedException, IOException 
  
 // pass value to child window     
      
-	 WebElement search =  driver.findElement(By.id("search_txt"));
-	 search.sendKeys("apple");
-	  
-	 
-	 driver.findElement(By.name("search")).click();
-	driver.findElement(By.linkText("apple")).click();
+	 opp.getSearchText().sendKeys("apple");
+	 opp.getClickOnSearch().click();
+	opp.getClickOnApple().click();
 
 // now switch into the parent window	
 	
 	driver.switchTo().window(homeid);
 	  
-	  WebElement saveBtn = driver.findElement(By.cssSelector("input[title='Save [Alt+S]']"));
-	  saveBtn.click();
-	  
+	  opp.getClickOnSaveBtn().click();
+	 	  
 // log out
 	  
-	  WebElement profile =  driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
+	  SignOut so = new SignOut(driver);
+	    WebElement hoverOnProfile =	so.getProfile();
 	  
-	  	  wdUtil.hover(profile);
+	  	  wdUtil.hover(hoverOnProfile);
 	  
 // how to freez profile and inspect , inspect -> go to the source -> press F8 button 
 //	  for freez element , now wright xpath.	  
 	
-	  driver.findElement(By.linkText("Sign Out")).click();
+	  	so.getSignout().click();
 	
 // close the browser
 	

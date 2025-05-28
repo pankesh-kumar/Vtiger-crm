@@ -9,26 +9,66 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test 2</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">6,436</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Test 1</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">8,907</td><td></td><td></td></tr>
-<tr><td><a href="#t2">Test 3</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">9,817</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">2</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">25,160</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">9</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">215,835</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test 2 &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">extra.Demo2</td><td><a href="#m0">mul</a></td><td rowspan="1">1748372289873</td><td rowspan="1">6359</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Test 1 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">extra.Demo1</td><td><a href="#m1">add</a></td><td rowspan="1">1748372289873</td><td rowspan="1">8839</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">Test 3 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">extra.Demo3</td><td><a href="#m2">sub</a></td><td rowspan="1">1748372289873</td><td rowspan="1">9745</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.comcast.crm.dashboardtest.ShowDashBoardTest</td><td><a href="#m0">ShowDashBoard</a></td><td rowspan="1">1748447330235</td><td rowspan="1">13007</td></tr><tr class="failedodd"><td rowspan="1">com.comcast.crm.emailtest.ComposeEmailTest</td><td><a href="#m1">ComposeEmail</a></td><td rowspan="1">1748447306075</td><td rowspan="1">24160</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.comcast.crm.calendartest.CreatCalendarTest</td><td><a href="#m2">CreateCalendar</a></td><td rowspan="1">1748447261189</td><td rowspan="1">25784</td></tr><tr class="passedodd"><td rowspan="1">com.comcast.crm.documentstest.CreateDocumentsTest</td><td><a href="#m3">CreateDocuments</a></td><td rowspan="1">1748447343244</td><td rowspan="1">18797</td></tr><tr class="passedeven"><td rowspan="1">com.comcast.crm.leadstest.CreateLeadsTest</td><td><a href="#m4">CreateLeads</a></td><td rowspan="1">1748447286977</td><td rowspan="1">19098</td></tr><tr class="passedodd"><td rowspan="1">com.comcast.crm.moretest.AddMoreTest</td><td><a href="#m5">AddMore</a></td><td rowspan="1">1748447174853</td><td rowspan="1">16643</td></tr><tr class="passedeven"><td rowspan="1">com.comcast.crm.moretest.DeleteMoreTest</td><td><a href="#m6">DeleteMore</a></td><td rowspan="1">1748447191506</td><td rowspan="1">10521</td></tr><tr class="passedodd"><td rowspan="1">com.comcast.crm.opportunitiestest.CreateOpportunitiesTest</td><td><a href="#m7">CreateOpportunities</a></td><td rowspan="1">1748447225531</td><td rowspan="1">17528</td></tr><tr class="passedeven"><td rowspan="1">com.comcast.crm.orgtest.CreateOrgTest</td><td><a href="#m8">CreateOrganization</a></td><td rowspan="1">1748447362041</td><td rowspan="1">28601</td></tr><tr class="passedodd"><td rowspan="1">com.comcast.crm.productstest.CreateProductsTest</td><td><a href="#m9">CreateProducts</a></td><td rowspan="1">1748447243063</td><td rowspan="1">18126</td></tr><tr class="passedeven"><td rowspan="1">com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest</td><td><a href="#m10">TroubleTickets</a></td><td rowspan="1">1748447202027</td><td rowspan="1">23500</td></tr></tbody>
 </table>
-<h2>Test 2</h2><h3 id="m0">extra.Demo2#mul</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.time.Duration.getSeconds()&quot; because &quot;duration&quot; is null
-	at java.base/java.util.concurrent.TimeUnit.convert(TimeUnit.java:218)
-	at java.base/java.lang.Thread.sleep(Thread.java:584)
-	at extra.Demo2.mul(Demo2.java:14)
+<h2>Test</h2><h3 id="m0">com.comcast.crm.dashboardtest.ShowDashBoardTest#ShowDashBoard</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=137.0.7151.41)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c15d782dac60a060b8d1578467a079c5, clickElement {id=f.E008412E05BBCA0B8420E7C952902008.d.1BFE49DA178359637D539F5B8A3C63ED.e.326}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.41, chrome: {chromedriverVersion: 137.0.7151.55 (254bc711794d..., userDataDir: C:\Users\panke\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55680}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55680/devtoo..., se:cdpVersion: 137.0.7151.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c15d782dac60a060b8d1578467a079c5)] -&gt; css selector: area[shape=&apos;polygon&apos;]]
+Session ID: c15d782dac60a060b8d1578467a079c5
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.comcast.crm.dashboardtest.ShowDashBoardTest.ShowDashBoard(ShowDashBoardTest.java:104)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1575)
-... Removed 15 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Test 1</h2><h3 id="m1">extra.Demo1#add</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">hi john</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Test 3</h2><h3 id="m2">extra.Demo3#sub</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">hy ram</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.comcast.crm.emailtest.ComposeEmailTest#ComposeEmail</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;img[src=&quot;themes/softed/images/select.gif&quot;]&quot;}
+  (Session info: chrome=137.0.7151.41)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d1fecafc2e873c6227e858fadd35990a, findElement {using=css selector, value=img[src=&quot;themes/softed/images/select.gif&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.41, chrome: {chromedriverVersion: 137.0.7151.55 (254bc711794d..., userDataDir: C:\Users\panke\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55647}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55647/devtoo..., se:cdpVersion: 137.0.7151.41, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d1fecafc2e873c6227e858fadd35990a
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy10.click(Unknown Source)
+	at com.comcast.crm.emailtest.ComposeEmailTest.ComposeEmail(ComposeEmailTest.java:101)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.comcast.crm.calendartest.CreatCalendarTest#CreateCalendar</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.comcast.crm.documentstest.CreateDocumentsTest#CreateDocuments</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.comcast.crm.leadstest.CreateLeadsTest#CreateLeads</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.comcast.crm.moretest.AddMoreTest#AddMore</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.comcast.crm.moretest.DeleteMoreTest#DeleteMore</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.comcast.crm.opportunitiestest.CreateOpportunitiesTest#CreateOpportunities</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">com.comcast.crm.orgtest.CreateOrgTest#CreateOrganization</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">com.comcast.crm.productstest.CreateProductsTest#CreateProducts</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest#TroubleTickets</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

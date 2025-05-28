@@ -1,5 +1,6 @@
 package com.comcast.crm.orgtest;
 
+import java.beans.Transient;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -13,12 +14,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.LoginPage;
+import object_reprository.Organization;
+import object_reprository.SignOut;
 
 public class CreateOrgTest {
-public static void main(String[] args) throws InterruptedException, IOException {
+	
+	@Test
+
+	public void CreateOrganization() throws IOException, InterruptedException {
 	
 
 // getting the data from property file
@@ -63,42 +71,41 @@ public static void main(String[] args) throws InterruptedException, IOException 
 	// login into vtiger crm
 	
 	driver.get(URL);
-	 WebElement uname = driver.findElement(By.name("user_name"));
-	uname.sendKeys("admin");
 	
-	WebElement password = driver.findElement(By.name("user_password"));
+	LoginPage lp = new LoginPage(driver);
+	WebElement username =  lp.getUsername();
+	username.sendKeys("admin");
+	WebElement password = lp.getPassword();
 	password.sendKeys("admin");
-	
-	Actions act = new Actions(driver);
-	
-	act.keyDown(Keys.ENTER).build().perform();
-	act.keyUp(Keys.ENTER).build().perform();
-	
-	Thread.sleep(30000);	
-	
+	WebElement clickOnLoginBtn =lp.getLoginbutton();
+	clickOnLoginBtn.click();
+	 	
 	
 	//creating organisation
 	
-	driver.findElement(By.linkText("Organizations")).click();
+	Organization org = new Organization(driver);
+	WebElement clickOnOrg =org.getClickOnOrg();
+	clickOnOrg.click();
+	WebElement clickOnCreateOrg =org.getCreateOrg();
+	clickOnCreateOrg.click();
 	
-	driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
-	
+			
 	//generating organization name with random number
 	      
-	     WebElement orgField = driver.findElement(By.name("accountname"));
-	     
+	    WebElement orgField = org.getOrgField();
+	        
      	 String apple = "monkey"+ (int) (Math.random()* 999);
 		 
 		 orgField.sendKeys(apple);
 		 
-		 //clicking on save button
+//		 clicking on save button
 		 
-		 WebElement savebtn = driver.findElement(By.name("button"));
-		 savebtn.click();
-		 
+		 WebElement clickOnSaveBtn = org.getClickOnSaveBtn();
+		 clickOnSaveBtn.click();
+				 
    // verification of organization name
 		 
-		 WebElement header = driver.findElement(By.className("dvHeaderText"));
+		 WebElement header =org.getHeader();
 		 String actualOrgName = header.getText();
 		 
 		 if(actualOrgName.contains(apple)) {
@@ -109,12 +116,13 @@ public static void main(String[] args) throws InterruptedException, IOException 
 		 }
 		 
 //   Logout
+		 SignOut so = new SignOut(driver);
+		 WebElement hoverOnProfile  =so.getProfile();
+		 wdUtil.hover(hoverOnProfile);
+		 WebElement clickOnSignOut = so.getSignout();
+		 clickOnSignOut.click();
 		 
-		 WebElement profile = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
-		 wdUtil.hover(profile);
-		 
-		 driver.findElement(By.linkText("Sign Out")).click();
-		 
+		 	 
 // close the browser
 		 
 		 Thread.sleep(5000);

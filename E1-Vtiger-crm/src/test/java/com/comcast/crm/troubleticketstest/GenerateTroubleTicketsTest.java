@@ -14,14 +14,19 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
+import object_reprository.Tickets;
 
 public class GenerateTroubleTicketsTest {
+	@Test
+	
+	public void TroubleTickets() throws IOException {
 
-	public static void main(String[] args) throws IOException, InterruptedException {
-		
 // get data from property file
 		
 				FileUtility fUtil = new FileUtility();
@@ -63,25 +68,27 @@ public class GenerateTroubleTicketsTest {
 		
 // login into vtiger-crm
 		driver.get(URL);
-		driver.findElement(By.name("user_name")).sendKeys("admin");
-		driver.findElement(By.name("user_password")).sendKeys("admin");
-		driver.findElement(By.cssSelector("input[type='submit']")).submit();
+		
+		LoginPage lp = new LoginPage(driver);
+		lp.getUsername().sendKeys("admin");
+		lp.getPassword().sendKeys("admin");
+		lp.getLoginbutton().click();
 		
 // click on trouble tickets and generate tickets
+		Tickets tc = new Tickets(driver);
 		
-		driver.findElement(By.linkText("Trouble Tickets")).click();
-		driver.findElement(By.cssSelector("img[src='themes/softed/images/btnL3Add.gif']")).click();  // click on plus icon
-		driver.findElement(By.name("ticket_title")).sendKeys("sindoor operation ");                 // send value in title field
-		driver.findElement(By.cssSelector("input[title='Save [Alt+S]']")).click();                  // click on save button
+		tc.getClickOnTroubleTicket().click();
+		tc.getClickOnPlus().click();                               // click on plus icon
+		tc.getTitleName().sendKeys("green travel");                // send value in title field
+		tc.getClickOnSaveBtn().click();                            // click on save button
 		
 // logout
 		
-		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
+		SignOut so = new SignOut(driver);
 		
-		
-		wdUtil.hover(profile);
-		
-		driver.findElement(By.linkText("Sign Out")).click();
+	    WebElement hoverOnProfile =	so.getProfile();
+		wdUtil.hover(hoverOnProfile);
+		so.getSignout().click();
 		
 // close the browser
 		

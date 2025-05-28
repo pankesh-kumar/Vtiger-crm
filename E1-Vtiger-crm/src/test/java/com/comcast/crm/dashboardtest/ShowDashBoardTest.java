@@ -16,19 +16,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class ShowDashBoardTest {
-
-	public static void main(String[] args) throws InterruptedException, IOException {
-		
+	@Test
+	public void ShowDashBoard() throws IOException, InterruptedException {
+	
 //  get the data from property file
 		
 		FileUtility futil = new FileUtility();
 		
-	
 		
 		String BROWSER = futil.getDataFromPropertiesFile("browser");
 		String URL = futil.getDataFromPropertiesFile("url");
@@ -70,9 +72,10 @@ public class ShowDashBoardTest {
 // login into vtiger-crm
 		
 		driver.get(URL);
-		driver.findElement(By.name("user_name")).sendKeys("admin");
-		driver.findElement(By.name("user_password")).sendKeys("admin");
-		driver.findElement(By.cssSelector("input[type='submit']")).submit();
+		LoginPage lp = new LoginPage(driver);
+		lp.getUsername().sendKeys("admin");
+		lp.getPassword().sendKeys("admin");
+		lp.getLoginbutton().click();
 		
 // click on dashboard 
 		
@@ -102,9 +105,11 @@ public class ShowDashBoardTest {
 		  
 		  
 // logout 
-		  WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		  a.moveToElement(profile).build().perform();
-		  driver.findElement(By.linkText("Sign Out")).click();
+		  SignOut so = new SignOut(driver);
+			 WebElement hoverOnProfile = so.getProfile();
+			 wdutil.hover(hoverOnProfile);
+			
+			 wdutil.hover(hoverOnProfile);
 		  
 // close browser
 		  

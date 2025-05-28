@@ -14,13 +14,18 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Test;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_reprository.DeleteMore;
+import object_reprository.LoginPage;
+import object_reprository.SignOut;
 
 public class DeleteMoreTest {
+	@Test
+	public void DeleteMore() throws IOException {
 
-	public static void main(String[] args) throws IOException {
 		
 // get data from property file
 		
@@ -67,38 +72,38 @@ public class DeleteMoreTest {
 // login into vtiger-crm
 		
 		driver.get(URL);
-		driver.findElement(By.name("user_name")).sendKeys("admin");
-		driver.findElement(By.name("user_password")).sendKeys("admin");
-		driver.findElement(By.cssSelector("input[type='submit']")).submit();
+		LoginPage lp = new LoginPage(driver);
+		lp.getUsername().sendKeys("admin");
+		lp.getPassword().sendKeys("admin");
+		lp.getLoginbutton().click();
 		
 // hover on more module
-		
-		WebElement more = driver.findElement(By.linkText("More"));     // inspect more module
-		more.click();
-		                                                    
+		DeleteMore dm = new DeleteMore(driver);
+		WebElement more = dm.getClickOnMore();     // inspect more module
+		more.click();                                                
 		wdUtil.hover(more);                                 // perform hover on more module
 		
 //  click on FAQ element 
 		
-		driver.findElement(By.linkText("FAQ")).click();       // inspect ->source->freez(F8 button)->element->write xpath.
+		dm.getClickOnFAQ().click();       // inspect ->source->freez(F8 button)->element->write xpath.
 		
 // click on check box
 		
-		driver.findElement(By.name("selected_id")).click();
+		dm.getClickOnCheckBox().click();
 // delete select element
 		
-		driver.findElement(By.cssSelector("input[value='Delete']")).click();
+		dm.getDeleteElement().click();
 		
 // handle popup
-		
 		
 		wdUtil.alert();
 		
 // log out
 		
-		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		  wdUtil.hover(profile);
-		  driver.findElement(By.linkText("Sign Out")).click();
+		SignOut so = new SignOut(driver);
+	      WebElement hoverOnProfile = so.getProfile();
+		  wdUtil.hover(hoverOnProfile);
+		  so.getSignout().click();
 		  
 // close window
 		  
