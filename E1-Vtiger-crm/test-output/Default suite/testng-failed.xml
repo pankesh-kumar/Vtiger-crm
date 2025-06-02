@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.comcast.crm.worldclocktest.WorldClockTest">
+      <class name="com.comcast.crm.orgtest.CreateOrgTest">
         <methods>
-          <include name="WorldClock"/>
+          <include name="openBrowser"/>
+          <include name="login"/>
+          <include name="CreateOrganization"/>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
         </methods>
-      </class> <!-- com.comcast.crm.worldclocktest.WorldClockTest -->
+      </class> <!-- com.comcast.crm.orgtest.CreateOrgTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,5 +1,6 @@
 package object_reprository;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -8,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+
+import generic_utility.FileUtility;
 
 public class LoginPage {
 
@@ -43,28 +46,24 @@ public class LoginPage {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void login() throws IOException {
+		FileUtility fUtil = new FileUtility();
+		
+		
+//	      String BROWSER = fUtil.getDataFromPropertiesFile("browser");
+	      String URL = fUtil.getDataFromPropertiesFile("url");
+	      String USERNAME = fUtil.getDataFromPropertiesFile("username");
+	      String PASSWORD = fUtil.getDataFromPropertiesFile("password");
+	      
+	      
+		
+	      driver.get(URL);
+	      getUsername().sendKeys("admin");
+	      getPassword().sendKeys("admin");
+	      getLoginbutton().click();
+		
+	}
 
-//	public static void main(String[] args) {
-//		
-//	 
-//		
-//		WebDriver driver = new ChromeDriver();
-//		driver.manage().window().maximize();
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-//
-//		driver.get("http://localhost:8888/");
-//		
-//		LoginPage lp = new LoginPage(driver);
-//		WebElement username = lp.getUsername();
-//		username.sendKeys("admin");
-//	}
+	}
 
-}
+

@@ -1,6 +1,4 @@
 package com.comcast.crm.orgtest;
-
-import java.beans.Transient;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -16,13 +14,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import baseUtility.BaseClass;
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
 import object_reprository.LoginPage;
 import object_reprository.Organization;
-import object_reprository.SignOut;
 
-public class CreateOrgTest {
+
+public class CreateOrgTest extends BaseClass {
 	
 	@Test
 
@@ -31,57 +30,60 @@ public class CreateOrgTest {
 
 // getting the data from property file
 	
-	FileUtility fUtil = new FileUtility();
-	
-	
-	      String BROWSER = fUtil.getDataFromPropertiesFile("browser");
-	      String URL = fUtil.getDataFromPropertiesFile("url");
-	      String USERNAME = fUtil.getDataFromPropertiesFile("username");
-	      String PASSWORD = fUtil.getDataFromPropertiesFile("password");
+//	FileUtility fUtil = new FileUtility();
+//	
+//	
+//	      String BROWSER = fUtil.getDataFromPropertiesFile("browser");
+//	      String URL = fUtil.getDataFromPropertiesFile("url");
+//	      String USERNAME = fUtil.getDataFromPropertiesFile("username");
+//	      String PASSWORD = fUtil.getDataFromPropertiesFile("password");
 	      
-// getting data from excel file
-	      
-	     String orgName =  fUtil.getDataFromExcelFile("org", 3, 3);
-	      
+      
+	          
 //  opening browser
 	      
 	    		  
-	WebDriver driver = null;
-	
-	if(BROWSER.equals("chrome")) {
-		driver = new ChromeDriver();
-	}
-	else if(BROWSER.equals("edge")) {
-		driver = new EdgeDriver();
-	}else if(BROWSER.equals("firefox")) {
-		driver = new FirefoxDriver();
-	}else {
-		driver = new ChromeDriver();
-	}
-	
-	
-	WebDriverUtility wdUtil = new WebDriverUtility (driver);
-	
-	
-	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+//	WebDriver driver = null;
+//	
+//	if(BROWSER.equals("chrome")) {
+//		driver = new ChromeDriver();
+//	}
+//	else if(BROWSER.equals("edge")) {
+//		driver = new EdgeDriver();
+//	}else if(BROWSER.equals("firefox")) {
+//		driver = new FirefoxDriver();
+//	}else {
+//		driver = new ChromeDriver();
+//	}
+//	
+//	
+//	WebDriverUtility wdUtil = new WebDriverUtility (driver);
+//	
+//	
+//	driver.manage().window().maximize();
+//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	
 	
 	
 	// login into vtiger crm
 	
-	driver.get(URL);
-	
-	LoginPage lp = new LoginPage(driver);
-	WebElement username =  lp.getUsername();
-	username.sendKeys("admin");
-	WebElement password = lp.getPassword();
-	password.sendKeys("admin");
-	WebElement clickOnLoginBtn =lp.getLoginbutton();
-	clickOnLoginBtn.click();
+//	driver.get(URL);
+//	
+//	LoginPage lp = new LoginPage(driver);
+//	WebElement username =  lp.getUsername();
+//	username.sendKeys("admin");
+//	WebElement password = lp.getPassword();
+//	password.sendKeys("admin");
+//	WebElement clickOnLoginBtn =lp.getLoginbutton();
+//	clickOnLoginBtn.click();
 	 	
 	
 	//creating organisation
+	     
+//	 getting data from excel file   
+	
+	     String orgName =  fUtil.getDataFromExcelFile("org", 3, 3);
+	      
 	
 	Organization org = new Organization(driver);
 	WebElement clickOnOrg =org.getClickOnOrg();
@@ -116,17 +118,17 @@ public class CreateOrgTest {
 		 }
 		 
 //   Logout
-		 SignOut so = new SignOut(driver);
-		 WebElement hoverOnProfile  =so.getProfile();
-		 wdUtil.hover(hoverOnProfile);
-		 WebElement clickOnSignOut = so.getSignout();
-		 clickOnSignOut.click();
+//		 SignOut so = new SignOut(driver);
+//		 WebElement hoverOnProfile  =so.getProfile();
+//		 wdUtil.hover(hoverOnProfile);
+//		 WebElement clickOnSignOut = so.getSignout();
+//		 clickOnSignOut.click();
 		 
 		 	 
 // close the browser
 		 
-		 Thread.sleep(5000);
-		 wdUtil.closingBrowser();
+//		 Thread.sleep(5000);
+//		 wdUtil.closingBrowser();
 				 
 }   
 

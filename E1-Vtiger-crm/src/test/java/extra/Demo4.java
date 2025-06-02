@@ -16,8 +16,8 @@ public class Demo4 {
 	public void case2() {
 		Reporter.log("regration group");
 	}
-	
-	@Test(groups = "regration")
+	 
+	@Test(groups = "regration") 
 	public void case3() {
 		Reporter.log("regration group");
 	}

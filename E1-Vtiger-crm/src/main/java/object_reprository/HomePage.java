@@ -2,13 +2,14 @@ package object_reprository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SignOut {
+public class HomePage {
       WebDriver driver;
       
-      public SignOut(WebDriver driver) {
+      public HomePage(WebDriver driver) {
     	  this.driver = driver;
     	  PageFactory.initElements(driver, this);
       }
@@ -30,5 +31,10 @@ public class SignOut {
 	}
   	
   	
+	public void logout() {
+		Actions act = new Actions(driver);
+		act.moveToElement(getProfile()).build().perform();
+		act.click(signout).build().perform();
+	}
   	
 }

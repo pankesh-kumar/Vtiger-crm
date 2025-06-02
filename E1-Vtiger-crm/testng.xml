@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<!--<parameter name="browser" value="chrome"></parameter -->
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.comcast.crm.worldclocktest.WorldClockTest"/>
+      <class name="com.comcast.crm.moretest.DeleteMoreTest"/>
+      <class name="com.comcast.crm.moretest.AddMoreTest"/>
+      <class name="com.comcast.crm.troubleticketstest.GenerateTroubleTicketsTest"/>
+      <class name="com.comcast.crm.opportunitiestest.CreateOpportunitiesTest"/>
+      <class name="com.comcast.crm.productstest.CreateProductsTest"/>
+      <class name="com.comcast.crm.calendartest.CreatCalendarTest"/>
+      <class name="com.comcast.crm.leadstest.CreateLeadsTest"/>
+      <class name="com.comcast.crm.emailtest.ComposeEmailTest"/>
+      <class name="com.comcast.crm.dashboardtest.ShowDashBoardTest"/>
+      <class name="com.comcast.crm.documentstest.CreateDocumentsTest"/>
+      <class name="com.comcast.crm.orgtest.CreateOrgTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
