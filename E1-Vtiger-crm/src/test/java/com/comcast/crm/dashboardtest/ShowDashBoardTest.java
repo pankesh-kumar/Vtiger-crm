@@ -49,7 +49,8 @@ public class ShowDashBoardTest extends BaseClass {
 		  WebElement selectpiechart = driver.findElement(By.cssSelector("area[shape='polygon']"));
 		  a.scrollToElement(selectpiechart).perform();
 		  Thread.sleep(3000);
-	
+	       driver.switchTo().frame(selectpiechart);
+	  
 		  selectpiechart.click();
 		  
 		  
