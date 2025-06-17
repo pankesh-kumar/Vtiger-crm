@@ -3,15 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.comcast.crm.dashboardtest.ShowDashBoardTest">
+      <class name="extra.AdvanceReporting">
         <methods>
-          <include name="openBrowser"/>
-          <include name="ShowDashBoard"/>
-          <include name="login"/>
-          <include name="logout"/>
-          <include name="closeBrowser"/>
+          <include name="case1"/>
+          <include name="WorldClock"/>
+          <include name="case2"/>
         </methods>
-      </class> <!-- com.comcast.crm.dashboardtest.ShowDashBoardTest -->
+      </class> <!-- extra.AdvanceReporting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
